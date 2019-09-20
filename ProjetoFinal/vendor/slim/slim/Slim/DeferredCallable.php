@@ -2,45 +2,58 @@
 /**
  * Slim Framework (https://slimframework.com)
  *
- * @license https://github.com/slimphp/Slim/blob/4.x/LICENSE.md (MIT License)
+ * @license https://github.com/slimphp/Slim/blob/3.x/LICENSE.md (MIT License)
  */
-
-declare(strict_types=1);
 
 namespace Slim;
 
-use Slim\Interfaces\CallableResolverInterface;
+use Closure;
+use Psr\Container\ContainerInterface;
 
 class DeferredCallable
 {
+    use CallableResolverAwareTrait;
+
     /**
      * @var callable|string
      */
-    protected $callable;
+    private $callable;
 
     /**
-     * @var CallableResolverInterface|null
+     * @var ContainerInterface
      */
-    protected $callableResolver;
+    private $container;
 
     /**
-     * @param callable|string                $callable
-     * @param CallableResolverInterface|null $resolver
+     * @param callable|string $callable
+     * @param ContainerInterface $container
      */
-    public function __construct($callable, ?CallableResolverInterface $resolver = null)
+    public function __construct($callable, ContainerInterface $container = null)
     {
         $this->callable = $callable;
-        $this->callableResolver = $resolver;
+        $this->container = $container;
     }
 
-    public function __invoke(...$args)
+    /**
+     * @return callable|string
+     */
+    public function getCallable()
     {
-        /** @var callable $callable */
-        $callable = $this->callable;
-        if ($this->callableResolver) {
-            $callable = $this->callableResolver->resolve($callable);
+        return $this->callable;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function __invoke()
+    {
+        $callable = $this->resolveCallable($this->callable);
+        if ($callable instanceof Closure) {
+            $callable = $callable->bindTo($this->container);
         }
 
-        return $callable(...$args);
+        $args = func_get_args();
+
+        return call_user_func_array($callable, $args);
     }
 }
