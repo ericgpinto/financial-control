@@ -1,10 +1,8 @@
 <?php
-// inclui o cabeçalho com requires e configs
+
 require_once "header.php";
 
-// passar a variável $config como parâmetro da instância do Slim
 $app = new \Slim\App($config);
-
 
 $app->post("/auth", "UserController:autenticar");
 
