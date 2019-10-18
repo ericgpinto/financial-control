@@ -78,9 +78,7 @@
 			$comando = $pdo->prepare($query);
 			$comando->bindParam ("idAccount", $idAccount);
 			$comando->execute();
-			$result = $comando->fetch(PDO::FETCH_OBJ);
-			return new Account($result->idAccount, $result->accountName, $result->accountType, 
-			$result->accountStatus);     
+			return $this->getAccountsById($idAccount);
 		}
 	}
 ?>

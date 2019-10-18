@@ -29,23 +29,6 @@
             $resultado->movementDate, $resultado->price);           
 		}
 
-		public function getSimulationByIdProject($idProject){
-			$query = "SELECT p.price - E.saldo as falta from
-			        	(select sum(receitas) - sum(despesas) as saldo from 
-							(SELECT SUM(CASE WHEN a.accountType = 1 THEN f.price ELSE 0 END) as receitas, 
-						            SUM(CASE WHEN a.accountType = 2 THEN f.price ELSE 0 END) as despesas 
-				            FROM financial_movements f 
-							LEFT JOIN accounts a ON a.idAccount = f.idAccount 
-				            GROUP BY a.accountType) AS T) as E, projects p 
-					  WHERE p.idProject = :idProject";		
-			$pdo = ConexaoPDO::getConexao(); 
-			$command = $pdo->prepare($query);
-			$command->bindParam ("idProject", $idProject);
-			$command->execute();
-			$resultado = $command->fetch(PDO::FETCH_OBJ);
-			return $resultado;
-		}
-
 		public function insertMovement(Movement $movement) {
 			$query = "INSERT INTO financial_movements(idAccount, movementDate, 
 			                      price) 
