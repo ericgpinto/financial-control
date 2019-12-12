@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Gerenciamento BMmotores</title>
+    </head>
+    <body>
+        <main>
+
+            <button id="logoutBtn">Logout</button>
+
+            <h2>Cadastro de Motores</h2>          
+            <form id="formulario">
+                <label for="txtnome">Nome:</label>
+                <input type="text" id="txtnome">
+                <label for="txtimagem">Imagem:</label>
+                <input type="text" id="txtimagem">
+                <label for="txtdescricao">Descrição:</label>
+                <input type="text" id="txtdescricao">
+                <label for="txtuso">Uso:</label>
+                <input type="text" id="txtuso">
+                <input type="hidden" id="txtid">
+                <input type="submit" id="btnsalvar" value="Salvar">
+                <input type="reset" value="Cancelar">
+                <br/>
+            </form>
+            
+            <h2>Tabela de Motores</h2>
+            <div id="tabela"></div>
+        
+        </main>
+
+    </body>
+
+    <script src="js/validacao.js"></script>
+    <script src="js/motores.js"></script>
+
+</html>

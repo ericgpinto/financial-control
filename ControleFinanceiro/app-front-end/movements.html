@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Controle</title>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+
+                <img src="imgs/money.png" class="img-fluid d-block">
+
+            </a>
+            <a href="#" class="navbar-brand h1 mb-0 text-warning">Living Dreams</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="#sobre">| Sobre |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="#blog">| Blog |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning " href="#app">| Nosso App |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="#dep">| Depoimentos |</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-3">
+                    <li class="nav-item ml-5">
+                        <button type="submit" id="projectBtn" class="container btn btn-success">Projetos</button>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <button type="submit" id="accountBtn" class="container btn btn-primary">Contas</button>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <button type="submit" id="movBtn" class="container btn btn-warning">Movimentos</button>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-5">
+                    <li class="nav-item">
+                        <button type="submit" id="logoutBtn" class="container btn btn-danger">Sair</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sessão Carrousel -->
+    <div id="carouselSite" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+            <li data-target="#carouselSite" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselSite" data-slide-to="1"></li>
+            <li data-target="#carouselSite" data-slide-to="2" class="active"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imgs/slide01.jpg" class="img-fluid d-block">
+                <div class="carousel-caption d-none d-md-block text-white bg-dark">
+                    <h4>Saiba se esta no caminho certo para atingir seu sonho!</h4>
+                </div>
+            </div>
+        </div>
+
+        <a href="#carouselSite" class="carousel-control-prev" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+
+        <a href="#carouselSite" class="carousel-control-next" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">Avançar</span>
+        </a>
+
+    </div>
+
+
+    <!-- Sessão Movimentos-->
+    <section class="bg-light pt-4">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-12 text-center mb-4 ">
+                    <h2 class="text-black">Crie e personalize movimentos para suas contas</h2>
+                    <hr>
+                    <button type="submit" id="btnListMovement" class="btn btn-success"> Ver Movimentos</button>    
+                    <div id="showTableMovements">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!--Modal Movimento-->
+    <div class="modal" id="newMovement">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Novo movimento</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <form id="form-mov">
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" id="txtidMovement">
+                            </div>
+                            <!--<div class="form-group">
+                                <input type="hidden" class="form-control" id="txtIdAccount" >
+                            </div>-->
+                           <div class="form-group">
+                                <select class="form-control" id="cmbAccounts" name="contas">
+                                    <option>Selecione a conta</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="form-control" id="date"  placeholder="data">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="txtprice" placeholder="Preço">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Inserir</button>
+                            <button type="reset" class="btn btn-success" id="#btnclear">Limpar</button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Final Modal Movimento-->
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"
+        integrity="sha256-jGAkJO3hvqIDc4nIY1sfh/FPbV+UK+1N+xJJg6zzr7A=" crossorigin="anonymous"></script> -->
+    <script src="js/auth.js"></script>
+    <script src="js/validacao.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/movimentos.js"></script>
+
+
+</body>
+
+</html>

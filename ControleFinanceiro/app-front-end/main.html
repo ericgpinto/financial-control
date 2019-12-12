@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Controle</title>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+
+                <img src="imgs/money.png" class="img-fluid d-block">
+
+            </a>
+            <a href="#" class="navbar-brand h1 mb-0 text-warning">Living Dreams</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="#sobre">| Sobre |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="#blog">| Blog |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning " href="#app">| Nosso App |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="#dep">| Depoimentos |</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-3">
+                    <li class="nav-item ml-5">
+                        <button type="submit" id="projectBtn" class="container btn btn-success">Projetos</button>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <button type="submit" id="accountBtn" class="container btn btn-primary">Contas</button>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <button type="submit" id="movBtn" class="container btn btn-warning">Movimentos</button>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-5">
+                    <li class="nav-item">
+                        <button type="submit" id="logoutBtn" class="container btn btn-danger">Sair</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="modal" id="modalEnter">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Entrar</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <form action="main.html">
+                            <div class="form-group">
+                                <label for="login">Login:</label>
+                                <input type="text" id="username" class="form-control"  placeholder="login">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMessage">Senha</label>
+                                <input type="password" id="password" class="form-control" placeholder="Senha">
+                            </div>
+                            <button type="submit" id="buscarTokenBtn" class="btn btn-primary">Entrar</button>
+                        </form>
+                        <div class="container text-danger" id="mensagem"></div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Voltar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Sessão Carrousel -->
+    <div id="carouselSite" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+            <li data-target="#carouselSite" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselSite" data-slide-to="1"></li>
+            <li data-target="#carouselSite" data-slide-to="2" class="active"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imgs/slide01.jpg" class="img-fluid d-block">
+                <div class="carousel-caption d-none d-md-block text-white bg-dark">
+                    <h4>Saiba se esta no caminho certo para atingir seu sonho!</h4>
+                </div>
+            </div>
+        </div>
+
+        <a href="#carouselSite" class="carousel-control-prev" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+
+        <a href="#carouselSite" class="carousel-control-next" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">Avançar</span>
+        </a>
+
+    </div>
+
+
+    <!-- Sessão Sobre Nós -->
+    <section id="sobre" class="bg-light pt-4">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-12 text-center mb-4 ">
+                    <h1>Sobre Nós</h1>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4 class="col-12 text-center mb-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eveniet error laborum omnis nesciunt ipsam iure hic distinctio aspernatur? Officia, ut sit. Quidem, voluptatum! Id, nulla odio. Voluptatum, maiores facilis.</h4>
+                <h6 class="col-12 text-center">
+                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus doloribus aliquid perspiciatis. Quasi officia deserunt ipsam? Quisquam dolore quia omnis magnam vero sed numquam sequi recusandae, ipsam ipsa, aut cumque.
+                </h6>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Sessão Blog -->
+    <section id="blog">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12 text-center mt-5">
+
+                    <h1>Blog</h1>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+
+                <div class="col-md-3">
+
+                    <nav id="navbarVertical" class="navbar navbar-light bg-dark">
+
+                        <nav class="nav nav-pills flex-column text-warning">
+                            <a href="#item1" class="nav-link text-warning">1. Reportagem 01</a>
+
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ml-3 text-warning" href="#item1-1">1.1 tal</a>
+                                <a class="nav-link ml-3 text-warning" href="#item1-2">1.2 etc</a>
+                            </nav>
+
+                            <a href="#item2" class="nav-link mt-2 text-warning">2. Algo</a>
+
+                            <a href="#item3" class="nav-link mt-2 text-warning">3. lorem</a>
+
+                            <nav class="nav nav-pills flex-column text-warning">
+                                <a class="nav-link ml-3 text-warning" href="#item3-1">3.1 testando</a>
+                                <a class="nav-link ml-3 text-warning" href="#item3-2">3.2 prototipo</a>
+                            </nav>
+                        </nav>
+
+                    </nav>
+
+                </div>
+
+
+                <div class="col-md-9 mt-2">
+
+                    <div data-spy="scroll" data-target="#navbarVertical" data-offset="0" class="scrollspySite">
+
+                        <h4 id="item1">tal</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque tempore unde odio perferendis quaerat fugit ut esse labore ea ad? Ipsum libero vitae voluptate similique quo, et saepe eum molestiae?</p>
+
+                        <h5 id="item1-1">etc</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quo ducimus itaque laborum accusamus non eveniet sit ipsam, odit quam quasi temporibus? Iste vel voluptatum veniam pariatur expedita ullam autem?</p>
+
+                        <h5 id="item1-2">alguma coisa</h5>
+                        <p>O termo conhecido como sushi é japonês. É ainda escrito em kanji (carateres chineses) para os
+                            pratos chineses antigos que carregam pouca semelhança com os sushi de hoje.</p>
+
+                        <h4 id="item2">outra coisa</h4>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos beatae nam amet deleniti nostrum. Amet, modi sapiente! Reprehenderit cupiditate quia, voluptatum quam, sapiente quidem adipisci enim maxime, optio alias laboriosam.</p>
+
+                        <h4 id="item3">pensando</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit explicabo, praesentium vitae unde similique esse blanditiis soluta in mollitia perferendis minus non, autem recusandae. Temporibus aliquam pariatur dolore minus?</p>
+
+                        <h5 id="item3-1">alguma postagem</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, iste? Esse qui aperiam voluptates numquam ducimus minus, odit exercitationem ullam culpa! Veritatis distinctio excepturi iure blanditiis suscipit officia, molestias reiciendis!</p>
+
+                        <h5 id="item3-2">fim</h5>
+                        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim nisi et dicta architecto exercitationem libero atque distinctio laudantium nihil illum doloremque quidem minus dolorem sed rerum, fuga suscipit sunt vero.</p>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Sessão Onde nos achar -->
+    <section id="app" class="bg-dark pt-4">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12 text-center text-warning mt-4  ">
+                    <h1>Nosso aplicativo</h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="row mt-5">
+
+                <div class="col-md-4 mb-5">
+                        <img src="imgs/app-screen.png" alt="" class="img-fluid">
+                </div>
+
+                <div class="col-md-5 mx-auto">
+                    <h5 class="text-warning">Controle seu dinheiro de onde estiver e a hora que quiser.</h5>
+                    <a href="#"><img src="imgs/download-app-ios.svg" class="img-fluid mt-2"></a>
+                    <a href="#"><img src="imgs/download-app-android.png" class="img-fluid mt-2"></a>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </section>
+
+
+     <!-- Sessão Depoimentos -->
+    <section id="dep" class="section-testimonials">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12 text-center text-warning mt-4  ">
+                    <h1>Depoimentos de usuários</h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <blockquote>
+                        <cite>
+                            <img src="imgs/customer-1.jpg" class="img-fluid" />
+                        </cite>
+                        <p class="mt-1">Joicelaine Carneiro</p>
+                        <p class="mt-2">"O Sushy By Éric é uma ótima escolha para todos os que gostam de um sushi de qualidade. O modo como eles preparam
+                            e a maneira como nos atendem, fazem nós ficarmos satisfeitos e querermos voltar o mais breve possível."</p>
+                    </blockquote>
+                </div>
+                <div class="col-md-4">
+                    <blockquote>
+                        <cite>
+                            <img src="imgs/customer-2.jpg" class="img-fluid" />
+                        </cite>
+                        <p class="mt-1">Joicelaine Carneiro</p>
+                        <p class="mt-2">"Pratos muito bem feitos, ambiente aconchegante e preço justo. O que mais se faz necessário em um restaurante? 
+                            Ainda mais quando estamos junto de pessoas especiais celebrando a vida. Sem dúvidas, o melhor de Porto Alegre, voltarei 
+                            em breve!"</p>
+                    </blockquote>
+                </div>
+                <div class="col-md-4">
+                    <blockquote>
+                        <cite>
+                            <img src="imgs/customer-3.jpg" class="img-fluid" />
+                        </cite>
+                        <p class="mt-1">Joicelaine Carneiro</p>
+                        <p class="mt-2">"Nunca tinha experimentado sushi na minha vida, até que um dia me conveceram a provar. E acreditem quando digo,
+                            comer sushi é um caminho sem volta, além do mais quando a sua primeira vez é no melhor restaurante de sushi de Florianópolis."</p>
+                    </blockquote>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--Sessão App e Redes Socias junto com o footer -->
+    <section >
+        <footer class="page-footer font-small bg-dark pt-4">
+
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-fb mx-1">
+                        <i class="fab fa-facebook-f text-warning"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-tw mx-1">
+                        <i class="fab fa-twitter text-warning"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-gplus mx-1">
+                        <i class="fab fa-google-plus-g text-warning"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-li mx-1">
+                        <i class="fab fa-linkedin-in text-warning"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-dribbble mx-1">
+                        <i class="fab fa-dribbble text-warning"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="footer-copyright text-center py-3">
+                <p class="text-white">© 2019 Copyright: Living Dreams</p>
+            </div>
+
+        </footer>
+    </section>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"
+        integrity="sha256-jGAkJO3hvqIDc4nIY1sfh/FPbV+UK+1N+xJJg6zzr7A=" crossorigin="anonymous"></script> -->
+    <script src="js/auth.js"></script>
+    <script src="js/validacao.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
